@@ -1,21 +1,78 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Interactive Traffic Light</title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 5rem 0;
+        text-align: center;
+        background-color: #263238;
+      }
+      .light_container {
+        display: inline-block;
+        width: 12.5rem;
+        box-sizing: border-box;
+        padding: 2.5rem;
+        background-color: #37474f;
+        box-shadow: 0 0 1rem #37474f;
+        border-radius: 6px;
+      }
+      .light_container > .light {
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 50%;
+        background-color: #455a64;
+        opacity: 0.75;
+        cursor: pointer;
+      }
+      .light_container > .light:hover {
+        opacity: 1;
+      }
+      .light_container > .light:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .light_container#red > .light.red {
+        background-color: #e74c3c;
+        box-shadow: 0 0 1rem #e74c3c;
+        opacity: 1;
+      }
+      .light_container#yellow > .light.yellow {
+        background-color: #f1c40f;
+        box-shadow: 0 0 1rem #f1c40f;
+        opacity: 1;
+      }
+      .light_container#green > .light.green {
+        background-color: #27ae60;
+        box-shadow: 0 0 1rem #27ae60;
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
-    <main class="container">
-      <div class="element">0</div>
-      <div class="element">1</div>
-      <div class="element">2</div>
-      <div class="element">3</div>
-      <div class="element">4</div>
-      <div class="element">5</div>
-    </main>
-
-    <script src="./main.js"></script>
+    <div class="light_container">
+      <div
+        class="red light"
+        onclick="this.parentElement.setAttribute('id', 'red');"
+      ></div>
+      <div
+        class="yellow light"
+        onclick="this.parentElement.setAttribute('id', 'yellow');"
+      ></div>
+      <div
+        class="green light"
+        onclick="this.parentElement.setAttribute('id', 'green');"
+      ></div>
+    </div>
   </body>
 </html>
