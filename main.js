@@ -66,6 +66,7 @@
 //     '100%{opacity:1}'
 // );
 
+// RED LIGht PART
 let boxes = document.querySelectorAll('.box');
 console.log(boxes);
 boxes.forEach((box) =>
