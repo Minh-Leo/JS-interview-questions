@@ -1,3 +1,4 @@
+// A closure is a function that accesses a variable "outside" itself. For example:
 // One useful thing to do with a closure is to create something like an "instance variable" that can change over time and can affect the behavior of a function.
 const getUniqueId = (() => {
   let nextGeneratedId = 0;
