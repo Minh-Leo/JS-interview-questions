@@ -24,6 +24,45 @@
       <img src="https://source.unsplash.com/random/640x480" alt="John Doe" />
     </div>
 
+    <!-- Start TODO -->
+    <div class="container">
+      <h2 class="text-center">Todo List App</h2>
+
+      <div class="form-group">
+        <label for="itemInput">Add Item</label>
+        <input type="text" class="form-control" name="" id="itemInput" />
+      </div>
+      <button id="addButton" class="btn btn-primary">Add To List</button>
+      <button id="clearButton" class="btn btn-danger">Clear Todo List</button>
+      <h3>Todo List</h3>
+      <ul id="todoList"></ul>
+    </div>
+    <!-- End -->
+
+    <!-- Start GET FROM SUBMIT VALUE -->
+    <form onsubmit="submitLoginForm(event)">
+      <input type="text" name="name" />
+      <input type="password" name="password" />
+      <input type="submit" value="Login" />
+    </form>
+
+    <script type="text/javascript">
+      function submitLoginForm(event) {
+        event.preventDefault();
+        console.log(event.target['name'].value);
+        console.log(event.target['password'].value);
+      }
+      function copytext(text) {
+        var textField = document.createElement('textarea');
+        textField.innerText = text;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
+      }
+    </script>
+    <!-- end -->
+
     <script src="./main.js"></script>
   </body>
 </html>
